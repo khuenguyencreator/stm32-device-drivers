@@ -1,8 +1,8 @@
-# STM32_Device_Lib
+# STM32 Device Drivers
 
 Reusable peripheral / IC drivers for STM32, built on the STM32 HAL. Source only —
 no `main.c`, no `.ioc`, no IDE project files. Runnable examples live in the
-separate **STM32_Device_Exam** repo, which consumes this repo as a git submodule
+separate [**stm32f103-device-examples**](https://github.com/khuenguyencreator/stm32f103-device-examples) repo, which consumes this repo as a git submodule
 at `lib/drivers/`.
 
 - Target: STM32F1 (drivers include `stm32f1xx_hal.h` directly).
@@ -17,9 +17,9 @@ Drivers are grouped one level deep, **all names lowercase**:
 |---|---|
 | `sensor/` | `dht` `ds18b20` `srf05` |
 | `input/` | `button` `joystick` `keypad` |
-| `display/` | `ssd1306` `st7735` `led7seg` `char_lcd` `char_lcd_i2c` |
+| `display/` | `ssd1306` `st7735` `st7789` `led7seg` `led7_6pin` `char_lcd` `char_lcd_i2c` |
 | `rtc/` | `ds3231` |
-| `rfid/` | `rc522` |
+| `rfid/` | `rc522` `rc522_simple` |
 | `audio/` | `dfplayer` |
 | `util/` | `flash` `delay_timer` |
 | `led/` `actuator/` `storage/` `comms/` `power/` `port/` | *(empty — reserved)* |
@@ -43,7 +43,7 @@ peripherals and wiring are documented at the top of every `<device>.h`.
 Add the submodule once:
 
 ```bash
-git submodule add https://github.com/nguyenkhue2608/STM32_Device_Lib.git lib/drivers
+git submodule add https://github.com/khuenguyencreator/stm32-device-drivers.git lib/drivers
 git submodule update --init --recursive
 ```
 
@@ -62,3 +62,8 @@ Update the drivers later with:
 cd lib/drivers && git pull origin master && cd ../..
 git add lib/drivers && git commit -m "chore: bump drivers"
 ```
+
+## Links
+
+- 📖 Tutorials (Vietnamese): [khuenguyencreator.com](https://khuenguyencreator.com)
+- 📚 More repos: [github.com/khuenguyencreator](https://github.com/khuenguyencreator)
